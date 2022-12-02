@@ -262,7 +262,7 @@ namespace Octree
                 // Check against any objects in this node
                 for (int i = 0; i < _objects.Count; i++)
                 {
-                    if (Vector3.Distance(position, _objects[i].Pos) <= maxDistance)
+                    if (Vector3.DistanceSquared(position, _objects[i].Pos) <= maxDistance * maxDistance)
                     {
                         result.Add(_objects[i].Obj);
                     }
